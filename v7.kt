@@ -23,7 +23,6 @@ fun main() {
                         println("Собака не добавлена.")
                     }
                 }
-
                 3 -> {
                     if (dog != null) {
                         println("Введите новую кличку собаки:")
@@ -36,15 +35,28 @@ fun main() {
                         val newWeight = readLine()!!.toDouble()
                         println("Введите новый рост собаки (см):")
                         val newHeight = readLine()!!.toDouble()
-                        dog.updateInfo(newName, newBreed, newColor, newWeight, newHeight)
+                        println("Выберите характер собаки:")
+                        println("1. Дружелюбный")
+                        println("2. Агрессивный")
+                        println("3. Спокойный")
+                        println("4. Активный")
+                        println("5. Умная")
+                        val newHaract = ""
+                        dog.updateInfo(newName, newBreed, newColor, newWeight, newHeight, newHaract)
                     } else {
                         println("Собака не добавлена.")
                     }
                 }
 
                 4 -> {
-                    dog = null
-                    println("Собака удалена!")
+                    if (dog != null) {
+                        dog = null
+                        println("Собака удалена!")
+                    }
+                    else
+                    {
+                        println("Чтобы удалить собаку, ее надо добавить.")
+                    }
                 }
 
                 5 -> {
